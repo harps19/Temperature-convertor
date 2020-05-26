@@ -1,0 +1,30 @@
+def convert():
+    which = input('Which temperature whould you like to convert? ').lower()
+    
+    while which != 'farenheight' and which != 'celcius':
+        which = input('Please enter farenheight or celcius ')
+    return which
+    
+def ctof(start, end):
+    for i in range(start, end):
+        c= (i * 9/5) +32
+        c=format(c,'4.1f')
+        print(format(i, '4.1f'), format(c, '>10'))
+which = convert()
+
+def ftoc(start, end):
+    for i in range(start , end):
+        f= (i- 32 ) * 5/9
+        f=format(f, '4.1f')
+        print(format(i, '4.1f'),format(f, '>15'))
+        
+start= int(input('Enter start temperature '))
+end = int(input('Enter end temperature \n'))
+
+if which == 'celcius' or which == 'c':
+    print('Celcius', 'Farenheight')
+    print(ctof(start, end+1))
+else:
+    c='Celcius'
+    print('Farenheight', format(c, '>11'))
+    print(ftoc(start, end+1))
